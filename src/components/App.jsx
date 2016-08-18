@@ -1,14 +1,10 @@
 import React from 'react'
 import TimerMixin from 'react-timer-mixin'
 import request from 'superagent'
-import Woof from './Woof'
-import SelectDogBox from './SelectDogBox'
-import WoofForm from './WoofForm'
 
 export default React.createClass({
   mixins: [TimerMixin],
   componentDidMount () {
-    this.setInterval(() => {
       request
         .get('http://192.168.20.57:3000/api/woofs')
         .end((err, res) => {
@@ -27,7 +23,6 @@ export default React.createClass({
         }
         this.setState({dogs: res.body})
       })
-    }, 500)
   },
 
   getInitialState () {
