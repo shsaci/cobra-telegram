@@ -1,2 +1,2 @@
 # cobra-telegram
-React based web-app displaying information on the Olympic Games
+React based web-app displaying information from an API
