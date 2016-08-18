@@ -4,7 +4,8 @@
   "description": "webapp displaying COOL THESARUOUS STUFF info",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "test": "tape -r babel-register 'tests/**/*.test.js' | tap-spec"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,8 @@
     "url": "https://github.com/shsaci/cobra-telegram/issues"
   },
   "homepage": "https://github.com/shsaci/cobra-telegram#readme",
+  "dependencies": {
+  },
   "babel": {
     "presets": [
       "es2015",
@@ -43,5 +46,5 @@
   "superagent": "^2.2.0",
   "webpack": "^1.13.2",
   "webpack-dev-server": "^1.14.1"
-  }
+}
 }
