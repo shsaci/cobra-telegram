@@ -22,9 +22,6 @@ export default React.createClass({
   }
 })
 
-
-
-
 // onSelectChange (evt) {
 //   var options = evt.target.options
 //   var value = []
