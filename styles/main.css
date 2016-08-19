@@ -10,13 +10,13 @@ body {
 }
 
 .link {
-  color: green;
+  color: grey;
+  font-size: 1.5em;
   padding-top: 1em;
   display: inline-block;
 }
 
 .about {
-  color: grey;
   padding-top: 4em;
 }
 
@@ -26,6 +26,10 @@ body {
 
 .container {
   padding-top: 1em;
+}
+
+a {
+  color: grey;
 }
 
 #btn {
