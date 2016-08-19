@@ -14,7 +14,7 @@ export default React.createClass({
   },
 
   handleRequest (evt) {
-    const word = evt.currentTarget ? evt.currentTarget.value : this.state.content
+    const word = this.state.content
     request
       .get(`http://words.bighugelabs.com/api/2/99b9e9de9f7b91269a3fd82d037b9068/${word}/json`)
       .end ((err, res) => {
@@ -44,6 +44,7 @@ export default React.createClass({
 
   handleKeypress(evt) {
     if(evt.keyCode !== 13) {
+      this.setState({content: this.currentTarget.value})
       return
     }
     this.handleRequest(evt)
