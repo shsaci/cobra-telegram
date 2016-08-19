@@ -1,7 +1,5 @@
 import React from 'react'
 import request from 'superagent'
-import WOTD from './WOTD'
-import ApiResponse from './ApiResponse'
 import SearchField from './SearchField'
 
 export default React.createClass({
@@ -21,16 +19,3 @@ export default React.createClass({
     )
   }
 })
-
-// onSelectChange (evt) {
-//   var options = evt.target.options
-//   var value = []
-//   for (var i = 0, l = options.length; i < l; i++) {
-//     if (options[i].selected) {
-//       value.push(Number(options[i].value))
-//     }
-//   }
-//   this.setState({
-//     selectedDogId: value
-//   })
-// },
