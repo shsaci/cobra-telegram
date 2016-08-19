@@ -5,18 +5,6 @@ import ApiResponse from './ApiResponse'
 import SearchField from './SearchField'
 
 export default React.createClass({
-  componentDidMount () {
-      request
-        .get('http://words.bighugelabs.com/api/2/99b9e9de9f7b91269a3fd82d037b9068/word/json')
-        .end((err, res) => {
-          if (err) {
-            console.error(err.message)
-            return
-          }
-          this.setState({ words: res.body})
-        })
-      },
-
   getInitialState () {
     return { words: []}
   },

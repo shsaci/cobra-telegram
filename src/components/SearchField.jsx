@@ -7,7 +7,9 @@ export default React.createClass({
   },
 
   getInitialState(){
-    return {noun:null, verb:null, syn:null}
+    return {
+      words: []
+    }
   },
 
 // REVISE THIS
@@ -30,19 +32,26 @@ export default React.createClass({
     this.setState({content: this.inputNode.value})
   },
 
+  handleRequest (evt) {
+    request
+      .get(`http://words.bighugelabs.com/api/2/99b9e9de9f7b91269a3fd82d037b9068/${this.inputNode.value}/json`)
+      .end ((err, res) => {
+      if (err) {
+        console.error(err.message)
+        return
+      }
+      this.setState({words: JSON.parse(res.text).noun.syn})
+      })
+  },
+
   render () {
-    const options = this.props.words.map((elem, i) => {
-      return <option value={elem.id} key={i}>{elem.name} </option>
-    })
     return(
       <div>
-        // <select onChange={this.handleOnClick}>
-        //   {options}
-        // </select>
         <form>
           <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput} /><br />
-          <input type="button" value="Submit" onClick={this.handlePost} />
+          <input type="button" value="Submit" onClick={this.handleRequest} />
         </form>
+        <div>{this.state.words.map(word => word)}</div>
       </div>
     )
   }
