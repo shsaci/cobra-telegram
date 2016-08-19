@@ -6,6 +6,7 @@ body {
 .head {
   color: red;
   padding-top: 1em;
+  letter-spacing: .25;
 }
 
 .link {
