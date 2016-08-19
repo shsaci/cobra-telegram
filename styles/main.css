@@ -1,0 +1,13 @@
+body {
+  /*background-color: lightgrey;*/
+  text-align: center;
+}
+
+.head {
+  color: red;
+  padding-top: 1em;
+}
+
+.link {
+  color: green;
+}

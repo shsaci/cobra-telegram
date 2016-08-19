@@ -1,34 +1,39 @@
 import React from 'react'
-import TimerMixin from 'react-timer-mixin'
 import request from 'superagent'
-
-import Header from './Header'
+import WOTD from './WOTD'
+import ApiResponse from './ApiResponse'
+import SearchField from './SearchField'
 
 export default React.createClass({
-  mixins: [TimerMixin],
-  componentDidMount () {
-    // this.setInterval(() => {
-    request
-        .get('http://127.0.0.1:3000/')
-        .end((err, res) => {
-          if (err) {
-            console.error(err.message)
-            return
-          }
-          console.log(res.body)
-        })
-    // }, 3000)
-  },
-
   getInitialState () {
-    return { woofs: [] }
+    return { words: []}
   },
 
   render () {
+    const wordElements = this.state.words.map((elem, i) => {
+      return <words noun={elem.noun} verb={elem.verb} key={i}/>
+  })
     return (
-      <div className='app-container'>
-        <Header />
+      <div className="container">
+        <SearchField words={this.state.words} />
+        {wordElements}
       </div>
     )
   }
 })
+
+
+
+
+// onSelectChange (evt) {
+//   var options = evt.target.options
+//   var value = []
+//   for (var i = 0, l = options.length; i < l; i++) {
+//     if (options[i].selected) {
+//       value.push(Number(options[i].value))
+//     }
+//   }
+//   this.setState({
+//     selectedDogId: value
+//   })
+// },
