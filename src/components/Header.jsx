@@ -7,9 +7,11 @@ export default React.createClass({
       <div>
         <header>
           <h1 className="head">Big Huge Cobra Thesaurus</h1>
+        </header>
+        <footer>
           <Link className='link' to="/">Home</Link> <div></div>
           <Link className='link' to="/about">About</Link>
-        </header>
+          </footer>
         {this.props.children}
     </div>
     )

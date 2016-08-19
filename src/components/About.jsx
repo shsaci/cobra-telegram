@@ -3,7 +3,7 @@ import React from 'react'
 export default React.createClass({
   render () {
     return (
-      <div className="About">
+      <div className="about">
         <h4>This is an About page</h4>
         <p>Welcome to the cobras thesaurus app.</p>
 
