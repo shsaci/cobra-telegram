@@ -7,6 +7,7 @@ export default React.createClass({
       <div>
         <header>
           <h1 className="head">Big Huge Cobra Thesaurus</h1>
+          <Link className='link' to="/">Home</Link> <div></div>
           <Link className='link' to="/about">About</Link>
         </header>
         {this.props.children}
