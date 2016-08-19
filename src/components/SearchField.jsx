@@ -56,7 +56,7 @@ export default React.createClass({
           <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput} onKeyUp={this.handleKeypress}
             />
             <br />
-          <input type="button" value="Submit" onClick={this.handleRequest} />
+          <button id="btn" type="button" onClick={this.handleRequest}>Submit</button>
         </form>
 
         <div>
