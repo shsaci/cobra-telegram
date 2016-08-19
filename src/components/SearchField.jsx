@@ -58,6 +58,7 @@ export default React.createClass({
             <br />
           <input type="button" value="Submit" onClick={this.handleRequest} />
         </form>
+
         <div>
           {this.state.words.map((word, i) => <Synonym word={word} key={i} />)}
         </div>

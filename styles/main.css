@@ -1,0 +1,33 @@
+body {
+  /*background-color: lightgrey;*/
+  text-align: center;
+}
+
+.head {
+  color: red;
+  padding-top: 1em;
+}
+
+.link {
+  color: green;
+  padding-top: 1em;
+  display: inline-block;
+}
+
+.about {
+  color: grey;
+  padding-top: 4em;
+}
+
+.results {
+  padding-top: 1em;
+}
+
+.container {
+  padding-top: 1em;
+}
+
+#btn {
+  color: white;
+  background-color: red;
+}
