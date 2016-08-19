@@ -1,5 +1,6 @@
 import React from 'react'
 import request from 'superagent'
+import Synonym from './Synonym'
 
 export default React.createClass({
   propTypes:{
@@ -12,25 +13,6 @@ export default React.createClass({
     }
   },
 
-// REVISE THIS
-  // handleOnClick(evt) {
-  //   var options = evt.target.options
-  //   console.log(evt.target.value)
-  //   console.log(options)
-  //   var value = []
-  //   for (var i = 0, l = options.length; i < l; i++) {
-  //     if (options[i].selected) {
-  //       value.push({noun: options[i].text, verb: options[i].value})
-  //     }
-  //   }
-  //   this.setState({noun:value[0].noun, verb: value[0].verb})
-  // },
-
-  inputNode: null,
-
-  handleInput(evt) {
-    this.setState({content: this.inputNode.value})
-  },
 
   handleRequest (evt) {
     request
@@ -44,14 +26,31 @@ export default React.createClass({
       })
   },
 
+  inputNode: null,
+
+  handleInput(evt) {
+    this.setState({content: this.inputNode.value})
+  },
+
   render () {
     return(
       <div>
+
         <form>
-          <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput} /><br />
+
+          <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput} />
+
+        <br />
+
           <input type="button" value="Submit" onClick={this.handleRequest} />
+
         </form>
-        <div>{this.state.words.map(word => word)}</div>
+
+        <div>
+
+          {this.state.words.map((word, i) => <Synonym word={word} key={i} />)}
+
+        </div>
       </div>
     )
   }
