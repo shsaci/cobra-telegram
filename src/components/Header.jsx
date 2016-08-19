@@ -6,9 +6,8 @@ export default React.createClass({
     return (
       <div>
         <header>
-          <h1>find your word</h1>
-          <Link to="/">Home</Link><br />
-          <Link to="/about">About</Link>
+          <h1 className="head">Big Huge Cobra Thesaurus</h1>
+          <Link className='link' to="/about">About</Link>
         </header>
         {this.props.children}
     </div>

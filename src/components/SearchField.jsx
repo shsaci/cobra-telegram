@@ -41,9 +41,7 @@ export default React.createClass({
           <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput} />
 
         <br />
-
-          <input type="button" value="Submit" onClick={this.handleRequest} />
-
+          <input className="button button-primary red" type="button" value="Submit" onClick={this.handleRequest} />
         </form>
 
         <div>
