@@ -12,7 +12,6 @@ export default React.createClass({
       words: []
     }
   },
-  
 
   handleRequest (evt) {
     const word = this.state.content
