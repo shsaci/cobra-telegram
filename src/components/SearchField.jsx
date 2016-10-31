@@ -42,19 +42,11 @@ export default React.createClass({
     this.setState({content: this.inputNode.value})
   },
 
-  handleKeypress(evt) {
-    if(evt.keyCode !== 13) {
-      this.setState({content: this.currentTarget.value})
-      return
-    }
-    this.handleRequest(evt)
-  },
-
   render () {
     return(
       <div>
         <form>
-          <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput} onKeyUp={this.handleKeypress}
+          <input ref={(node) => this.inputNode = node} type="text" name="Word" placeholder="Enter your word here" onChange={this.handleInput}
             />
             <br />
           <button id="btn" type="button" onClick={this.handleRequest}>Submit</button>
